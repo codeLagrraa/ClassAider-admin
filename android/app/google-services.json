@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "25544350134",
+    "project_id": "madscs-bb717",
+    "storage_bucket": "madscs-bb717.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25544350134:android:ca4e9afcbbf0dc04bd0917",
+        "android_client_info": {
+          "package_name": "com.example.ucscprojectmad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25544350134-l6gpm7fu1dmqc7n03pevmio6tqo94q1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_8tMQ31kkYxk26IlC9-SuaTNpkxvrVFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25544350134-l6gpm7fu1dmqc7n03pevmio6tqo94q1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
