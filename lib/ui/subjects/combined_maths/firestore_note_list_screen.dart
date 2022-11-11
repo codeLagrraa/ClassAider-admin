@@ -97,6 +97,8 @@ class _FireStoreScreenState extends State<FireStoreScreen> {
             title: Text('Update'),
             content: Container(
               child: TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
                 controller: editController,
                 decoration: InputDecoration(
                     hintText: 'Edit'

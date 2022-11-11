@@ -36,9 +36,15 @@ class _SignupScreenState extends State<SignupScreen> {
     _auth.createUserWithEmailAndPassword(
         email: emailController.text.toString(),
         password: passwordController.text.toString()).then((value){
+      Utils().toastMessage("User created");
       setState(() {
         loading = false ;
       });
+      Navigator.push(context,
+          MaterialPageRoute(
+              builder:(context) => LoginScreen())
+      );
+
     }).onError((error, stackTrace){
       Utils().toastMessage(error.toString());
       setState(() {
@@ -54,72 +60,85 @@ class _SignupScreenState extends State<SignupScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Form(
-              key: _formKey,
-              child: Column(
+        child: SingleChildScrollView (
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    controller: emailController,
-                    decoration: const  InputDecoration(
-                        hintText: 'Email',
-                        prefixIcon: Icon(Icons.alternate_email)
-                    ),
-                    validator: (value){
-                      if(value!.isEmpty){
-                        return 'Enter email';
-                      }
-                      return null ;
-                    },
-                  ),
-                  const SizedBox(height: 10,),
-                  TextFormField(
-                    keyboardType: TextInputType.text,
-                    controller: passwordController,
-                    obscureText: true,
-                    decoration: const  InputDecoration(
-                        hintText: 'Password',
-                        prefixIcon: Icon(Icons.lock_open)
-                    ),
-                    validator: (value){
-                      if(value!.isEmpty){
-                        return 'Enter password';
-                      }
-                      return null ;
-                    },
-                  ),
+                  SizedBox(height: 40.0,),
+                  Image.asset("./assets/virtual-class.png", width: 78.0,),
+                  SizedBox(height: 20.0,),
+                  Text('ClassAider - ADMIN', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.blue),),
+                  Text('version - 1.0', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.black, fontStyle: FontStyle.italic),),
+                  SizedBox(height: 40.0,),
                 ],
               ),
-            ),
-            const SizedBox(height: 50,),
-            RoundButton(
-              title: 'Sign up',
-              loading: loading,
-              onTap: () {
-              if(_formKey.currentState!.validate()){
-                signUp();
-              }
-            },
-            ),
-            const SizedBox(height: 30,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Already have an account?"),
-                TextButton(onPressed: (){
-                  Navigator.push(context,
-                      MaterialPageRoute(
-                          builder:(context) => LoginScreen())
-                  );
-                },
-                    child: Text('Login'))
-              ],
-            ),
-          ],
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: emailController,
+                      decoration: const  InputDecoration(
+                          hintText: 'Email',
+                          prefixIcon: Icon(Icons.alternate_email)
+                      ),
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Enter email';
+                        }
+                        return null ;
+                      },
+                    ),
+                    const SizedBox(height: 10,),
+                    TextFormField(
+                      keyboardType: TextInputType.text,
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: const  InputDecoration(
+                          hintText: 'Password',
+                          prefixIcon: Icon(Icons.lock_open)
+                      ),
+                      validator: (value){
+                        if(value!.isEmpty){
+                          return 'Enter password';
+                        }
+                        return null ;
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 50,),
+              RoundButton(
+                title: 'Sign up',
+                loading: loading,
+                onTap: () {
+                if(_formKey.currentState!.validate()){
+                  signUp();
+                }
+              },
+              ),
+              const SizedBox(height: 30,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Already have an account?"),
+                  TextButton(onPressed: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(
+                            builder:(context) => LoginScreen())
+                    );
+                  },
+                      child: Text('Login'))
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

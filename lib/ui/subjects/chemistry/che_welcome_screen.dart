@@ -5,7 +5,7 @@ import 'package:ucscprojectmad/widgets/round_button.dart';
 
 import '../../../utils/utils.dart';
 import '../../auth/login_screen.dart';
-import '../../subject_selector.dart';
+import '../../main_menu_screen.dart';
 import 'firestore_note_list_screenC.dart';
 import '../../posts/post_screen.dart';
 import 'complete_list_pageC.dart';
@@ -37,8 +37,8 @@ class _cheWelcomeScreenState extends State<cheWelcomeScreen> {
                 SizedBox(width: 10.0,),
                 IconButton(onPressed: (){
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context)=> subjectSelector()));
-                }, icon: Icon(Icons.bookmarks_outlined),),
+                      MaterialPageRoute(builder: (context)=> MainMenuScreen()));
+                }, icon: Icon(Icons.home),),
                 SizedBox(width: 10.0,),
 
               ],

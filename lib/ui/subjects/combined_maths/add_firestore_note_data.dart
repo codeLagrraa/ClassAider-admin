@@ -41,10 +41,11 @@ class _AddFirestoreDataScreenState extends State<AddFirestoreDataScreen> {
             ),
 
             TextFormField(
-              maxLines: 4,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
               controller: postController,
               decoration: InputDecoration(
-                  hintText: 'What is in your mind?' ,
+                  hintText: 'Add note here' ,
                   border: OutlineInputBorder()
               ),
             ),

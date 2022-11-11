@@ -21,9 +21,16 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Mini Book' , style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.deepPurple),),
+        child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("./assets/virtual-class.png", width: 188.0,),
+            SizedBox(height: 20.0,),
+            Text('ClassAider - ADMIN', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.deepPurple),),
+          ],
+        ),
       ),
     );
   }

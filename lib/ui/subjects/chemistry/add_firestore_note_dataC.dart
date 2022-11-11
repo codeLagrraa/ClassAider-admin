@@ -41,7 +41,8 @@ class _AddFirestoreDataScreenCState extends State<AddFirestoreDataScreenC> {
             ),
 
             TextFormField(
-              maxLines: 4,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
               controller: postController,
               decoration: InputDecoration(
                   hintText: 'Add note here' ,
